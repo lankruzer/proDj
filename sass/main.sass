@@ -1,0 +1,162 @@
+@import "fonts"
+@import "libs"
+@import "base"
+@import "vars"
+@import "mixins"
+
+// Пользовательские стили
+body
+	margin: 0
+	padding: 0
+	@include font
+	
+.header-contacts
+	padding-bottom: 6px
+	border-bottom: 2px solid #e8e8e8
+	.container
+		display: flex
+		align-items: center
+
+.header-contacts-address
+	display: flex
+	font-style: normal
+	*
+		margin-right: 30px
+	.link-phone
+		@include icon-before($width: 10px, $height: 16px)
+			background-image: url("../img/icon-phone.png")
+		@include link
+	.link-email
+		@include icon-before($width: 14px, $height: 11px)
+			background-image: url("../img/icon-mail.png")
+		@include link
+	.header-address
+		@include icon-before($width: 12px, $height: 14px)
+			background-image: url("../img/icon-mark.png")
+		margin: 0 20px 0 0
+		padding-right: 30px
+		border-right: 1px solid #cbcbcb
+
+.header-social
+	display: flex	
+	margin: 0
+	padding: 0
+	list-style: none
+	a 
+		margin-right: 2px
+		padding: 3px 10px
+		box-sizing: border-box
+
+.header-contacts-img
+	align-self: flex-start
+	margin-left: auto
+	margin-right: 0
+
+.header-logo
+	margin-right: 50px
+	text-decoration: none
+	img
+		display: inline-block
+		vertical-align: middle
+
+.header-main-nav
+	margin: 35px auto 30px
+	.container
+		display: flex
+		justify-content: space-between
+		align-items: center
+		nav
+			display: flex
+			align-items: center
+
+.header-menu
+	display: flex
+	flex-wrap: wrap
+	margin: 0
+	padding: 0
+	list-style: none
+	li
+		margin-right: 20px		
+		a
+			@include font($size: 15px, $font-weight: 600, $color: #4b4c64, $line-height: auto)
+			@include link($color-hover: #b71e3e)
+	li.active
+		a
+			color: #b71e3e
+		
+.btn-open-search 
+	display: inline-block
+	vertical-align: middle
+	width: 23px
+	height: 23px
+	margin-right: 15px
+	box-sizing: border-box
+	font-size: 0;
+	background-image: url("../img/search-icon.png")
+	background-position: center
+	background-size: 18px 18px
+	background-repeat: no-repeat
+	text-decoration: none
+	transition: 0.5s
+	cursor: pointer
+	
+.link-to-basket
+	position: relative
+	display: inline-block
+	vertical-align: middle
+	padding: 5px
+	width: 23px
+	height: 24px
+	box-sizing: border-box
+	font-size: 0;
+	background-image: url("../img/icon-bag.png")
+	background-position: center
+	background-size: 18px 19px
+	background-repeat: no-repeat
+	text-decoration: none
+	transition: 0.5s
+	cursor: pointer
+	.basket-counter
+		position: absolute
+		top: 10%
+		left: 50%
+		display: block
+		padding: 5px;
+		font-size: 10px
+		line-height: 10px
+		font-weight: 600
+		color: #fff
+		background-color: #b71e3e
+		border-radius: 50%
+		transform: translate(-50%, -80%)
+		
+.menu-categories 
+	margin: 0
+	padding: 0 0 10px
+	display: flex
+	justify-content: space-between
+	list-style: none
+	li:not(:last-of-type)
+		margin-right: 5px
+	a 		
+		height: 100%
+		padding: 15px
+		box-sizing: border-box
+		text-align: center
+		@include link($color-hover: #38f4de)
+		@include font($font-weight: 700, $size: 12px, $line-height: 16px, $letter-spacing: 0.03em, $color: #fff)
+		display: flex
+		align-items: center
+		justify-content: center
+		text-transform: uppercase
+		background-color: #383746
+		border: 1px solid #aeaeae
+		
+main 
+	background-color: #f6f8f9
+
+
+
+
+	
+@import "media" // Всегда в конце

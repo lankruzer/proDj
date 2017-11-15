@@ -1,0 +1,53 @@
+@mixin btn
+	.btn
+		display: inline-block
+		padding: 15px 40px
+		margin: 10px
+		font-family: monospace
+		font-size: 20px
+		text-decoration: none
+		color: #000
+		border: 2px solid #000
+		background: #fff
+		transition: 0.25s
+		&:hover
+			background-color: rgba(0, 0, 0, 0.2)
+
+@mixin input-placeholder 
+	&.placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, &::-webkit-input-placeholder
+		@content
+
+@mixin font($size: 15px, $line-height: 22px, $font-weight: 400, $letter-spacing: 0, $style: normal, $color: #424242)
+	font-family: 'Open Sans', sans-serif
+	font-size: $size
+	line-height: $line-height
+	font-weight: $font-weight
+	letter-spacing: $letter-spacing
+	font-style: $style
+	color: $color
+
+@mixin icon-before($top: 50%, $left: 0, $width: 15px, $height: 15px, $bg-size: cover, $bg-position: center, $bg-repeat: no-repeat, $x: 0, $y: -50%)
+	position: relative
+	padding-left: $width + 10;
+	box-sizing: border-box;
+	&::before
+		content: ""
+		position: absolute
+		top: $top
+		left: $left
+		width: $width
+		height: $height
+		background-size: $bg-size
+		background-position: $bg-position
+		background-repeat: $bg-repeat
+		transform: translate($x, $y)
+		@content
+
+@mixin link($display: inline-block, $color: #424242, $decoration: none, $color-hover: #a60930, $decoration-hover: none)
+	display: $display
+	color: $color
+	text-decoration: $decoration
+	transition: 0.5s
+	&:hover
+		color: $color-hover
+		text-decoration: $decoration-hover
