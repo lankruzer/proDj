@@ -26,8 +26,7 @@
 				</address>
 				<ul class="header-social">
 					<li><a href="#" class="link-soc link-soc-fb"><img src="img/soc-fb.png" alt="Facebook"></a></li>
-					<li><a href="#" class="link-soc link-soc-tw"><img src="img/soc-tw.png" alt="Twitter"></a></li>
-					<li><a href="#" class="link-soc link-soc-g"><img src="img/soc-gm.png" alt="Gmail"></a></li>
+					<li><a href="#" class="link-soc link-soc-fb"><img src="img/soc-vk.png" alt="Vkontakte"></a></li>
 					<li><a href="#" class="link-soc link-soc-im"><img src="img/soc-im.png" alt="Instagram"></a></li>
 				</ul>
 				<div class="header-contacts-img">
@@ -49,8 +48,60 @@
 					</ul>
 				</nav>
 				<div class="header-user-block">
-					<a href="#" class="btn-open-search">Поиск</a>
-					<a href="basket.html" class="link-to-basket">Корзина<span class="basket-counter">50</span></a>
+					<div class="block-header-search">
+						<a href="#" class="btn-open-search">Поиск</a>
+						<form action="#" method="post" class="block-swim-search">
+							<input type="text" name="search" placeholder="Введите запрос для поиска" required>
+							<button type="submit" class="btn btn-blue">Поиск</button>
+						</form>
+					</div>
+					<a href="comparison.html" class="link-to-comparison">Сравнение товаров</a>
+					<div class="block-header-basket">
+						<a href="basket.html" class="link-to-basket">Корзина<span class="basket-counter">50</span></a>
+						<div class="block-swim-basket">
+							<div class="swim-basket-goods">
+								<form action="#" method="post">
+									<table class="swim-basket">
+										<tr>
+											<td rowspan="2" class="swim-basket-img"><a href="good-item.html"><img src="img/basket-swim-product.png" width="49" height="49" alt=""></a></td>
+											<td class="swim-basket-name"><a href="good-item.html">Pioneer DJM-2000</a></td>
+											<td rowspan="2" class="swim-basket-remove"><button class="btn-remove">Удалить</button></td>
+										</tr>
+										<tr>
+											<td class="swim-basket-count"><span class="swim-basket-counter">1</span> x <span class="swim-basket-cost">499 000 KZT</span></td>
+										</tr>
+									</table>
+								</form>
+								<form action="#" method="post">
+									<table class="swim-basket">
+										<tr>
+											<td rowspan="2" class="swim-basket-img"><a href=""></a><img src="img/basket-swim-product.png" width="49" height="49" alt=""></td>
+											<td class="swim-basket-name">Pioneer DJM-2000</td>
+											<td rowspan="2" class="swim-basket-remove"><button class="btn-remove">Удалить</button></td>
+										</tr>
+										<tr>
+											<td class="swim-basket-count"><span class="swim-basket-counter">1</span> x <span class="swim-basket-cost">499 000 KZT</span></td>
+										</tr>
+									</table>
+								</form>
+								<form action="#" method="post">
+									<table class="swim-basket">
+										<tr>
+											<td rowspan="2" class="swim-basket-img"><a href="good-item.html"><img src="img/basket-swim-product.png" width="49" height="49" alt=""></a></td>
+											<td class="swim-basket-name"><a href="good-item.html">Pioneer DJM-2000</a></td>
+											<td rowspan="2" class="swim-basket-remove"><button class="btn-remove">Удалить</button></td>
+										</tr>
+										<tr>
+											<td class="swim-basket-count"><span class="swim-basket-counter">1</span> x <span class="swim-basket-cost">499 000 KZT</span></td>
+										</tr>
+									</table>
+								</form>
+							</div>
+							<div class="swim-basket-full-cost">Подытог: <span class="swim-basket-full-cost">1 497 000</span> KZT</div>
+							<a href="basket.html" class="btn btn-blue mar-b-10">Перейти в корзину</a>
+							<a href="order.html" class="btn btn-red">Оформить заказ</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -58,7 +109,15 @@
 			<div class="container">
 				<nav>
 					<ul class="menu-categories">
-						<li><a href="catalog.html">Проигрыватели</a></li>
+						<li class="dropdown-menu"><a href="catalog.html">Проигрыватели</a>
+							<ul>
+								<li><a href="catalog.html">Проигрыватель-1</a></li>
+								<li><a href="catalog.html">Проигрыватель-2</a></li>
+								<li><a href="catalog.html">Проигрыватель-3</a></li>
+								<li><a href="catalog.html">Проигрыватель-4</a></li>
+								<li><a href="catalog.html">Проигрыватель-5</a></li>
+							</ul>	
+						</li>
 						<li><a href="catalog.html">Микшеры</a></li>
 						<li><a href="catalog.html">Наушники</a></li>
 						<li><a href="catalog.html">Котроллеры</a></li>
@@ -76,8 +135,8 @@
 	
 	<main>
 		<div class="container">
-			<div class="big-slider">
-				<div class="big-slide"><img src="" alt=""></div>
+			<div class="big-slider slick-big-slider">
+				<div class="big-slide"><img src="img/big-slide-1.jpg"  alt=""></div>
 				<div class="big-slide"><img src="" alt=""></div>
 				<div class="big-slide"><img src="" alt=""></div>
 			</div>

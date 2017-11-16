@@ -13,9 +13,13 @@
 		&:hover
 			background-color: rgba(0, 0, 0, 0.2)
 
-@mixin input-placeholder 
-	&.placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, &::-webkit-input-placeholder
+@mixin input-placeholder
+	&::-webkit-input-placeholder,
+	&:-moz-placeholder,
+	&::-moz-placeholder,
+	&:-ms-input-placeholder
 		@content
+
 
 @mixin font($size: 15px, $line-height: 22px, $font-weight: 400, $letter-spacing: 0, $style: normal, $color: #424242)
 	font-family: 'Open Sans', sans-serif
@@ -51,3 +55,68 @@
 	&:hover
 		color: $color-hover
 		text-decoration: $decoration-hover
+
+@mixin before-absolute($top, $left, $width, $height)
+	&::before
+		content: ""
+		position: absolute
+		top: $top
+		left: $left
+		width: $width
+		height: $height
+		@content
+
+@mixin after-absolute($top, $left, $width, $height)
+	&::after
+		content: ""
+		position: absolute
+		top: $top
+		left: $left
+		width: $width
+		height: $height
+		@content
+
+
+@mixin input
+	display: inline-block
+	vertical-align: middle
+	padding: 15px 20px
+	min-height: 45px
+	box-sizing: border-box
+	background-color: #fff
+	border: 2px solid #aeaeae
+	outline: none	
+	transition: 0.5s
+
+@mixin btn
+	display: inline-block
+	vertical-align: top 
+	padding: 18px 40px
+	width: auto
+	box-sizing: border-box
+	text-align: center
+	font-size: 16px
+	line-height: normal
+	text-decoration: none
+	color: #fff
+	border: 0px
+	outline: none
+	cursor: pointer
+	transition: 0.5s
+		
+@mixin btn-blue
+	@include btn
+	background-color: rgb(0, 121, 194)
+	box-shadow: 0px 5px 10px 0px rgba(85, 142, 202, 0.3)
+	&:hover,
+	&:active
+		background-color: rgb(70, 119, 170);
+
+@mixin btn-red
+	@include btn
+	background-color: rgb(206, 28, 0)
+	box-shadow: 0px 5px 10px 0px rgba(206, 28, 0, 0.3)
+	&:hover,
+	&:active
+		background-color: rgb(183, 24, 0)
+	

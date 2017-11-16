@@ -9,6 +9,12 @@ body
 	margin: 0
 	padding: 0
 	@include font
+
+.btn-blue
+	@include btn-blue
+
+.btn-red
+	@include btn-red	
 	
 .header-contacts
 	padding-bottom: 6px
@@ -25,11 +31,11 @@ body
 	.link-phone
 		@include icon-before($width: 10px, $height: 16px)
 			background-image: url("../img/icon-phone.png")
-		@include link
+		@include link($decoration-hover: underline)
 	.link-email
 		@include icon-before($width: 14px, $height: 11px)
 			background-image: url("../img/icon-mail.png")
-		@include link
+		@include link($decoration-hover: underline)
 	.header-address
 		@include icon-before($width: 12px, $height: 14px)
 			background-image: url("../img/icon-mark.png")
@@ -84,12 +90,18 @@ body
 		a
 			color: #b71e3e
 		
+.block-header-search
+	position: relative
+	display: inline-block
+	vertical-align: middle
+	margin-right: 15px
+
 .btn-open-search 
+	position: relative
 	display: inline-block
 	vertical-align: middle
 	width: 23px
 	height: 23px
-	margin-right: 15px
 	box-sizing: border-box
 	font-size: 0;
 	background-image: url("../img/search-icon.png")
@@ -99,7 +111,139 @@ body
 	text-decoration: none
 	transition: 0.5s
 	cursor: pointer
+	&::after
+		content: ""
+		position: absolute
+		bottom: 155%
+		left: 50%
+		z-index: 10
+		width: 10px
+		height: 10px
+		background-color: #fff
+		border-right: 2px solid #383746
+		border-bottom: 2px solid #383746
+		transform: translateX(-50%) rotate(45deg)
+		transition: 0.5s
+		visibility: hidden
+		opacity: 0
+	&::before
+		content: "Поиск по сайту"
+		position: absolute
+		left: 50%
+		bottom: 180%
+		z-index: 5
+		display: block
+		width: 180px
+		padding: 5px 15px
+		box-sizing: border-box
+		text-align: center
+		@include font($size: 14px, $line-height: 18px, $font-weight: 600, $color: #424242)
+		background-color: #fff
+		border: 2px solid #383746
+		transform: translateX(-50%)
+		transition: 0.5s
+		visibility: hidden
+		opacity: 0
+	&:hover::before,
+	&:hover::after
+		visibility: visible
+		opacity: 1
+
+.block-swim-search 
+	position: absolute
+	top: 145%
+	right: -20px
+	z-index: -1
+	display: flex
+	padding: 30px
+	box-sizing: border-box
+	border: 2px solid #e8e8e8
+	background-color: #fff
+	box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3)
+	visibility: hidden
+	opacity: 0
+	transition: 0.5s
+	@include before-absolute(-10px, auto, 15px, 15px)
+		right: 20px
+		background-color: #fff
+		border-left: 2px solid #e8e8e8
+		border-top: 2px solid #e8e8e8
+		transform: rotate(45deg)
+	input
+		@include input
+		margin-right: 10px
+		width: 345px
+	button
+		@include btn-blue
+
+.block-header-search:hover .block-swim-search
+	z-index: 5
+	visibility: visible
+	opacity: 1
+
+.block-header-basket
+	position: relative
+	display: inline-block
+	vertical-align: middle
+	&:hover .block-swim-basket
+		z-index: 5
+		opacity: 1
+		visibility: visible
 	
+.link-to-comparison
+	position: relative
+	display: inline-block
+	vertical-align: middle
+	width: 23px
+	height: 18px
+	margin-right: 15px
+	box-sizing: border-box
+	font-size: 0;
+	background-image: url("../img/icon-compare.png")
+	background-position: center
+	background-size: 23px 18px
+	background-repeat: no-repeat
+	text-decoration: none
+	transition: 0.5s
+	cursor: pointer
+	&::after
+		content: ""
+		position: absolute
+		bottom: 180%
+		left: 50%
+		z-index: 10
+		width: 10px
+		height: 10px
+		background-color: #fff
+		border-right: 2px solid #383746
+		border-bottom: 2px solid #383746
+		transform: translateX(-50%) rotate(45deg)
+		transition: 0.5s
+		visibility: hidden
+		opacity: 0
+	&::before
+		content: "Сравнение товаров"
+		position: absolute
+		left: 50%
+		bottom: 210%
+		z-index: 5
+		display: block
+		width: 180px
+		padding: 5px 15px
+		box-sizing: border-box
+		text-align: center
+		@include font($size: 14px, $line-height: 18px, $font-weight: 600, $color: #424242)
+		background-color: #fff
+		border: 2px solid #383746
+		transform: translateX(-50%)
+		transition: 0.5s
+		visibility: hidden
+		opacity: 0
+	&:hover::before,
+	&:hover::after
+		visibility: visible
+		opacity: 1
+
 .link-to-basket
 	position: relative
 	display: inline-block
@@ -129,7 +273,93 @@ body
 		background-color: #b71e3e
 		border-radius: 50%
 		transform: translate(-50%, -80%)
-		
+
+.block-swim-basket
+	position: absolute
+	top: 145%
+	right: -20px
+	display: flex
+	flex-direction: column
+	width: 290px
+	padding: 20px 20px 30px
+	box-sizing: border-box
+	border: 2px solid #e8e8e8
+	background-color: #fff
+	box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3)
+	transition: 0.5s
+	z-index: -1
+	opacity: 0
+	visibility: hidden
+	@include before-absolute(-10px, auto, 15px, 15px)
+		right: 20px
+		background-color: #fff
+		border-left: 2px solid #e8e8e8
+		border-top: 2px solid #e8e8e8
+		transform: rotate(45deg)
+	.btn
+		padding: 18px 10px
+
+.block-header-basket:hover .block-swim-basket
+	z-index: 5
+	visibility: visible
+	opacity: 1
+
+.swim-basket
+	padding: 15px 0
+	width: 100%
+	border-bottom: 1px solid #c8c8c8
+
+.swim-basket-img
+	padding-right: 15px
+	width: 50px
+	text-decoration: none
+
+.swim-basket-name
+	vertical-align: top
+	@include font($size: 14px, $line-height: normal, $font-weight: 600, $letter-spacing: 0, $style: normal, $color: #b71e3e)
+	a
+		@include link($color: #b71e3e, $decoration-hover: underline)
+	
+.swim-basket-remove
+	vertical-align: top
+	padding-left: 10px
+	text-align: right
+
+.btn-remove
+	position: relative
+	display: inline-block
+	vertical-align: top
+	width: 25px
+	height: 25px
+	box-sizing: border-box
+	font-size: 0
+	background-color: #fff
+	border: 2px solid $border-color
+	outline: none
+	cursor: pointer
+	@include before-absolute(50%, 50%, 12px, 2px)
+		background-color: #7e7e7e
+		transform: translate(-50%, -50%) rotate(45deg)
+	@include after-absolute(50%, 50%, 12px, 2px)
+		background-color: #7e7e7e
+		transform: translate(-50%, -50%) rotate(-45deg)
+
+.swim-basket-count
+	@include font($size: 14px, $font-weight: 400, $color: #424242)
+	
+.swim-basket-full-cost 
+	margin: 15px 0
+	width: 100%
+	text-align: center
+	@include font($size: 15px, $font-weight: 700, $color: #004242)
+	
+.swim-basket-goods
+	max-height: 91px * 3 + 50px
+	overflow-y: auto
+
+.mar-b-10 
+	margin-bottom: 10px
+
 .menu-categories 
 	margin: 0
 	padding: 0 0 10px
@@ -151,8 +381,38 @@ body
 		text-transform: uppercase
 		background-color: #383746
 		border: 1px solid #aeaeae
+
+.dropdown-menu
+	position: relative
+	ul
+		position: absolute
+		top: calc(100% - 1px)
+		left: 0
+		z-index: -1
+		margin: 0
+		padding: 30px
+		background-color: #383746
+		opacity: 0
+		list-style: none
+		visibility: hidden
+		transition: 0.5s
+		li 
+			width: 100%
+			a
+				padding-left: 0
+				padding-right: 0
+				@include font($size: 14px, $color: #fff, $line-height: 18px, $letter-spacing: 0.018em)
+				text-transform: none
+				border: 0
+				border-bottom: 2px solid #626179
+	&:hover ul
+		z-index: 5
+		opacity: 1
+		visibility: visible
+		
 		
 main 
+	padding-top: 30px
 	background-color: #f6f8f9
 
 
@@ -160,3 +420,7 @@ main
 
 	
 @import "media" // Всегда в конце
+
+img
+	max-width: 100%
+	height: auto
