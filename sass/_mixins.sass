@@ -1,25 +1,12 @@
-@mixin btn
-	.btn
-		display: inline-block
-		padding: 15px 40px
-		margin: 10px
-		font-family: monospace
-		font-size: 20px
-		text-decoration: none
-		color: #000
-		border: 2px solid #000
-		background: #fff
-		transition: 0.25s
-		&:hover
-			background-color: rgba(0, 0, 0, 0.2)
-
 @mixin input-placeholder
-	&::-webkit-input-placeholder,
-	&:-moz-placeholder,
-	&::-moz-placeholder,
-	&:-ms-input-placeholder
-		@content
-
+		&::-webkit-input-placeholder
+			@content
+		&::-moz-placeholder
+		    @content
+		&:-moz-placeholder
+		    @content
+		&:-ms-input-placeholder
+		    @content
 
 @mixin font($size: 15px, $line-height: 22px, $font-weight: 400, $letter-spacing: 0, $style: normal, $color: #424242)
 	font-family: 'Open Sans', sans-serif
@@ -76,7 +63,6 @@
 		height: $height
 		@content
 
-
 @mixin input
 	display: inline-block
 	vertical-align: middle
@@ -120,3 +106,141 @@
 	&:active
 		background-color: rgb(183, 24, 0)
 	
+@mixin slick-arrow-middle
+	position: absolute
+	top: 50%
+	z-index: 5
+	display: block
+	width: 40px
+	height: 40px
+	box-sizing: border-box	
+	font-size: 0	
+	border: 2px solid #fff
+	outline: none
+	background-color: transparent
+	box-shadow: none
+	transform: translateY(-50%)
+	transition: 0.5s
+	cursor: pointer
+	&:hover
+		border-color: #0079c2
+		background-color: #0079c2
+	&.slick-prev
+		left: 35px
+		&::before
+			content: ""
+			position: absolute
+			top: 50%
+			left: 60%
+			display: block
+			width: 10px
+			height: 10px
+			border-left: 2px solid #fff
+			border-bottom: 2px solid #fff
+			transform: translate(-50%, -50%) rotate(45deg)
+	&.slick-next
+		right: 35px
+		&::before
+			content: ""
+			position: absolute
+			top: 50%
+			right: 60%
+			display: block
+			width: 10px
+			height: 10px
+			border-right: 2px solid #fff
+			border-bottom: 2px solid #fff
+			transform: translate(50%, -50%) rotate(-45deg)
+
+@mixin slick-dots-middle
+	position: absolute
+	left: 50%
+	bottom: 25px
+	margin: 0
+	padding: 0
+	list-style: none
+	transform: translateX(-50%)
+	li
+		display: inline-block
+		vertical-align: top
+		margin: 10px 10px 0
+	button
+		display: block
+		width: 20px
+		height: 7px
+		font-size: 0
+		background-color: #0081cb
+		border: 0
+		outline: none
+		box-shadow: none
+		transition: 0.5s
+		cursor: pointer
+		&:hover
+			background-color: #fff
+	.slick-active
+		button
+			background-color: #fff
+
+@mixin title-h2
+	position: relative
+	margin: 0 0 26px
+	padding: 0 0 27px
+	@include font($size: 26px, $font-weight: 700, $line-height: 26px, $color: #3b3b3b)
+	text-transform: uppercase
+	@include before-absolute($top: auto, $left: 0, $width: 50px, $height: 6px)
+		bottom: 0
+		background-color: #0079c2
+		
+@mixin slick-arrows-top
+	position: absolute
+	top: -78px
+	z-index: 5
+	display: block
+	width: 45px
+	height: 45px
+	box-sizing: border-box	
+	font-size: 0	
+	border: 3px solid #558eca
+	outline: none
+	background-color: transparent
+	box-shadow: none
+	transition: 0.5s
+	cursor: pointer
+	&:hover
+		border-color: #0079c2
+		background-color: #0079c2
+	&.slick-prev
+		right: 65px
+		&::before
+			content: ""
+			position: absolute
+			top: 50%
+			left: 55%
+			display: block
+			width: 10px
+			height: 10px
+			border-left: 3px solid #000
+			border-bottom: 3px solid #000
+			transform: translate(-50%, -50%) rotate(45deg)
+	&.slick-next
+		right: 0
+		&::before
+			content: ""
+			position: absolute
+			top: 50%
+			right: 55%
+			display: block
+			width: 10px
+			height: 10px
+			border-right: 3px solid #000
+			border-bottom: 3px solid #000
+			transform: translate(50%, -50%) rotate(-45deg)
+	&:hover::before
+		border-color: #fff
+
+@mixin triangle($size, $color)
+	width: 0
+	height: 0
+	border-top: $size solid transparent
+	border-bottom: $size solid transparent
+	border-right: $size solid $color

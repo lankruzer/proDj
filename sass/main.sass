@@ -173,6 +173,9 @@ body
 		@include input
 		margin-right: 10px
 		width: 345px
+		@include input-placeholder
+			font-style: italic
+		
 	button
 		@include btn-blue
 
@@ -186,7 +189,7 @@ body
 	display: inline-block
 	vertical-align: middle
 	&:hover .block-swim-basket
-		z-index: 5
+		z-index: 10
 		opacity: 1
 		visibility: visible
 	
@@ -300,7 +303,7 @@ body
 		padding: 18px 10px
 
 .block-header-basket:hover .block-swim-basket
-	z-index: 5
+	z-index: 10
 	visibility: visible
 	opacity: 1
 
@@ -406,21 +409,313 @@ body
 				border: 0
 				border-bottom: 2px solid #626179
 	&:hover ul
-		z-index: 5
+		z-index: 10
 		opacity: 1
 		visibility: visible
 		
-		
 main 
 	padding-top: 30px
+	padding-bottom: 100px
 	background-color: #f6f8f9
 
+.big-slider 
+	margin-bottom: 60px
 
-
-
+.big-slider .slick-arrow
+	@include slick-arrow-middle
 	
-@import "media" // Всегда в конце
+.big-slider .slick-dots
+	@include slick-dots-middle
 
-img
-	max-width: 100%
+.block-items
+	padding-bottom: 60px
+
+h2.block-title
+	@include title-h2
+
+.btn-good-item
+	@include btn-blue
+	
+.slick-slider-four .slick-arrow
+	@include slick-arrows-top
+
+.slick-slider-four .slick-list
+	margin: 0 -20px
+
+.good-item
+	padding-bottom: 10px
+
+.good-item-content
+	position: relative
+	display: flex
+	flex-direction: column
+	align-items: center
+	padding: 0 0 5px
+	margin: 0 auto
+	width: 270px
+	height: 100%
+	min-height: 340px
+	box-sizing: border-box
+	background-color: #fff
+	.btn
+		margin: 0 25px 8px
+		width: auto
+	&:hover
+  		box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1);
+	&:hover .good-item-img::before,
+	&:hover .good-item-img::after
+		opacity: 1
+		visibility: visible
+		
+	
+.good-item-img
+	position: relative
+	display: block
+	margin-bottom: 10px
+	padding: 35px 10px 0
+	width: 100%
+	box-sizing: border-box
+	text-align: center
+	text-decoration: none
+	outline: none
+	img
+		display: inline-block
+		margin: 0 auto
+		width: auto
+		height: auto
+	@include before-absolute(0, 0, 100%, 100%)
+		z-index: 10
+		background-color: rgba(76, 116, 226, 0.6)
+		opacity: 0
+		visibility: hidden
+		transition: 0.5s
+	@include after-absolute(50%, 50%, auto, auto)
+		content: "Посмотреть"
+		padding: 15px 65px
+		box-sizing: border-box
+		@include font($size: 12px, $font-weight: 700, $letter-spacing: 0.05em, $color: #fff)
+		text-transform: uppercase
+		border: 3px solid #36f4de
+		z-index: 15
+		opacity: 0
+		visibility: hidden
+		transition: 0.5s
+		transform: translate(-50%, -50%)
+
+.slick-slider *
+	outline: none
+
+.current-price
+	margin: 0 25px
+	text-align: center
+	@include font($size: 18px, $font-weight: 600, $color: #b71e3e)
+	
+.old-price
+	margin: 0 25px
+	text-align: center
+	@include font($size: 16px, $font-weight: 600, $color: #8a8a8a)
+	text-decoration: line-through
+	
+.good-item-actions
+	position: absolute
+	top: 20px
+	right: 0
+	z-index: 5
+	display: flex
+	flex-direction: column
+	align-items: flex-end
+	& > div
+		position: relative
+		padding: 10px 15px
+		width: auto
+		@include font($size: 11px, $font-weight: 700, $letter-spacing: 0.03em, $color: #fff)
+		text-transform: uppercase
+		background-color: #ee634c
+		@include before-absolute($top: 0, $left: auto, $width: 0, $height: 0)
+			right: 100%
+			transform: translate(20%, -32%) rotate(135deg)
+			@include triangle($size: 15px, $color: #ee634c)
+		@include after-absolute($top: auto, $left: auto, $width: 0, $height: 0)
+			right: 100%
+			bottom: 0
+			transform: translate(20%, 32%) rotate(-135deg)
+			@include triangle($size: 15px, $color: #ee634c)
+	& > div.actions-new
+		background-color: #a15dbb
+		@include before-absolute($top: 0, $left: auto, $width: 0, $height: 0)
+			right: 100%
+			transform: translate(20%, -32%) rotate(135deg)
+			@include triangle($size: 15px, $color: #a15dbb)
+		@include after-absolute($top: auto, $left: auto, $width: 0, $height: 0)
+			right: 100%
+			bottom: 0
+			transform: translate(20%, 32%) rotate(-135deg)
+			@include triangle($size: 15px, $color: #a15dbb)
+	& > div.actions-sale
+		background-color: #29b973
+		@include before-absolute($top: 0, $left: auto, $width: 0, $height: 0)
+			right: 100%
+			transform: translate(20%, -32%) rotate(135deg)
+			@include triangle($size: 15px, $color: #29b973)
+		@include after-absolute($top: auto, $left: auto, $width: 0, $height: 0)
+			right: 100%
+			bottom: 0
+			transform: translate(20%, 32%) rotate(-135deg)
+			@include triangle($size: 15px, $color: #29b973)
+			
+.cols
+	display: flex
+	justify-content: space-between
+
+.col-25
+	width: calc(25% - 15px)
+
+.col-33
+	width: calc(100% / 3 - 15px)
+
+.col-50
+	width: calc(50% - 15px)
+
+.col-75
+	width: calc(75% - 15px)
+
+.sale-img
+	display: block
+	text-decoration: none
+	img
+		max-width: inherit
+		width: 100%
+		height: auto
+
+.slick-slider-two 
+	.slick-list
+		margin: 0 -15px
+	.slick-arrow
+		@include slick-arrows-top
+
+.slick-slider-tree
+	.slick-list
+		margin: 0 -15px
+	.slick-arrow
+		@include slick-arrows-top
+	
+.news-preview
+	display: flex
+	flex-direction: column
+	align-items: flex-start
+	p
+		margin: 0 0 15px
+	.btn
+		font-size: 12px
+		font-weight: 700
+		letter-spacing: 0.05em
+		text-transform: uppercase
+
+.news-preview-img
+	margin-bottom: 20px
+	width: 100%
 	height: auto
+	img
+		max-width: inherit
+		width: 100%
+		height: auto
+	
+.link-blue
+	@include font($size: 18px, $line-height: 24px, $font-weight: 600)
+	@include link($color: #0079c2, $color-hover: #b71e3e)
+	
+.news-preview .link-blue
+	margin-bottom: 10px
+	
+.block-subscribe
+	display: flex
+	justify-content: space-between
+	align-items: center
+	margin: 40px 0 0
+	padding: 35px 40px
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1);
+	p
+		margin: 0
+		width: 240px
+	label
+		position: relative	
+		@include icon-before($left: 0)
+			background-image: url("../img/icon-mail.png")
+		padding-left: 0
+	input
+		margin-right: 25px
+		padding: 15px 30px
+		width: 258px
+		box-sizing: border-box
+		border: 0
+		outline: none
+		border-bottom: 2px solid #558eca
+		transition: 0.5s
+		@include input-placeholder
+			font-style: italic
+			font-size: 15px
+			color: #4b4c64
+	.btn
+		font-size: 12px
+		font-weight: 700
+		letter-spacing: 0.05em
+		text-transform: uppercase
+	
+.subscribe-title
+	@include font($size: 18px, $font-weight: 700, $color: #b71e3e)
+	text-transform: uppercase
+	
+footer
+	padding: 85px 0
+	background-color: #383746
+	.container
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+.copy
+	margin-right: auto
+	p
+		margin: 0
+	@include font($size: 14px, $line-height: 30px, $font-weight: 400, $color: #fff)
+
+.footer-nav
+	margin: 0 50px auto auto
+	padding: 0
+	column-count: 3
+	column-gap: 20px
+	color: #fff
+	li
+		margin: 0
+		padding: 0
+		width: 160px
+		list-style: none
+
+.footer-link
+	position: relative
+	display: block
+	@include font($size: 14px, $line-height: 30px, $color: #fff)
+	@include link($color: #fff, $color-hover: #38f4de, $decoration-hover: underline)
+	padding-left: 13px
+	@include before-absolute(14px, 0, 3px, 3px)
+		background-color: #fff
+		transition: 0.5s
+	&:hover::before
+		background-color: #38f4de
+	
+li.active .footer-link
+	color: #38f4de
+	text-decoration: underline
+	&::before
+		background-color: #38f4de
+
+.footer-cards
+	.cards-title
+		display: block
+		margin-bottom: 15px
+		@include font($size: 16px, $font-weight: 700, $line-height: 30px, $color: #38f4de)
+		
+		
+
+
+@import "media" // Всегда в конце
