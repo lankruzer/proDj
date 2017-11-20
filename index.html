@@ -19,15 +19,31 @@
 	<header>
 		<div class="header-contacts">
 			<div class="container">
+				<button class="mobile-header-main-nav"><span class="lines"></span>Меню</button>
 				<address class="header-contacts-address">
 					<a href="tel:+77473362202" class="link link-phone">+7 (747) 336-22-02</a>
 					<a href="mailto:prodj.kz@gmail.com" class="link link-email">prodj.kz@gmail.com</a>
 					<p class="header-address">г. Алматы, ул. Сатпаева, 29/3, оф. 45</p>
 				</address>
 				<ul class="header-social">
-					<li><a href="#" class="link-soc link-soc-fb"><img src="img/soc-fb.png" alt="Facebook"></a></li>
-					<li><a href="#" class="link-soc link-soc-fb"><img src="img/soc-vk.png" alt="Vkontakte"></a></li>
-					<li><a href="#" class="link-soc link-soc-im"><img src="img/soc-im.png" alt="Instagram"></a></li>
+					<li>
+						<a href="#" class="link-soc link-soc-fb">
+							<img class="icon-soc-vis" src="img/soc-fb.png" alt="Facebook">
+							<img class="icon-soc-hover" src="img/icon-fb-hover.png" alt="Facebook">
+						</a>
+					</li>
+					<li>
+						<a href="#" class="link-soc link-soc-fb">
+							<img class="icon-soc-vis" src="img/soc-vk.png" alt="Vkontakte">
+							<img class="icon-soc-hover" src="img/icon-vk-hover.png" alt="Facebook">
+						</a>
+					</li>
+					<li>
+						<a href="#" class="link-soc link-soc-im">
+							<img class="icon-soc-vis" src="img/soc-im.png" alt="Instagram">
+							<img class="icon-soc-hover" src="img/icon-im-hover.png" alt="Facebook">
+						</a>
+					</li>
 				</ul>
 				<div class="header-contacts-img">
 					<img src="img/header-img.jpg" width="169" height="46" alt="Pioneer Dj Authorized">
@@ -37,15 +53,22 @@
 		<div class="header-main-nav">
 			<div class="container">
 				<nav>
-					<a href="#" class="header-logo"><img src="img/logo.jpg" alt=""></a>
-					<ul class="header-menu">
-						<li class="active"><a href="about.html">О нас</a></li>
-						<li><a href="pay.html">Доставка и оплата</a></li>
-						<li><a href="dillers.html">Дилерская сеть</a></li>
-						<li><a href="manufacturers.html">Производители</a></li>
-						<li><a href="support.html">Служба поддержки</a></li>
-						<li><a href="contacts.html">Контакты</a></li>
-					</ul>
+					<a href="#" class="header-logo">
+						<img src="img/logo.jpg" alt="ProDJ Казахстан">
+						<img src="img/mobile-logo.png" alt="ProDJ Казахстан" class="mobile-logo">
+					</a>
+					<div class="header-menu-block">
+						<div class="mobile-menu-title">Меню сайта</div>
+						<button class="mobile-menu-close">Закрыть</button>
+						<ul class="header-menu">
+							<li class="active"><a href="about.html">О нас</a></li>
+							<li><a href="pay.html">Доставка и оплата</a></li>
+							<li><a href="dillers.html">Дилерская сеть</a></li>
+							<li><a href="manufacturers.html">Производители</a></li>
+							<li><a href="support.html">Служба поддержки</a></li>
+							<li><a href="contacts.html">Контакты</a></li>
+						</ul>
+					</div>
 				</nav>
 				<div class="header-user-block">
 					<div class="block-header-search">
@@ -76,7 +99,7 @@
 									<table class="swim-basket">
 										<tr>
 											<td rowspan="2" class="swim-basket-img"><a href=""></a><img src="img/basket-swim-product.png" width="49" height="49" alt=""></td>
-											<td class="swim-basket-name">Pioneer DJM-2000</td>
+											<td class="swim-basket-name"><a href="good-item.html">Pioneer DJM-2000</a></td>
 											<td rowspan="2" class="swim-basket-remove"><button class="btn-remove">Удалить</button></td>
 										</tr>
 										<tr>
@@ -106,10 +129,13 @@
 			</div>
 		</div>
 		<div class="header-menu-categories">
+			<button class="btn-mobile-menu-cactegories"><div class="container"><span class="lines"></span> Категории товаров</div></button>
 			<div class="container">
 				<nav>
 					<ul class="menu-categories">
-						<li class="dropdown-menu"><a href="catalog.html">Проигрыватели</a>
+						<li class="dropdown-menu">
+							<a href="catalog.html">Проигрыватели</a>
+							<div class="caret"></div>
 							<ul>
 								<li><a href="catalog.html">Проигрыватель-1</a></li>
 								<li><a href="catalog.html">Проигрыватель-2</a></li>
@@ -122,7 +148,17 @@
 						<li><a href="catalog.html">Наушники</a></li>
 						<li><a href="catalog.html">Котроллеры</a></li>
 						<li><a href="catalog.html">Акустические системы</a></li>
-						<li><a href="catalog.html">Аксессуары</a></li>
+						<li class="dropdown-menu">
+							<a href="catalog.html">Аксессуары</a>
+							<div class="caret"></div>
+							<ul>
+								<li><a href="catalog.html">Проигрыватель-1</a></li>
+								<li><a href="catalog.html">Проигрыватель-2</a></li>
+								<li><a href="catalog.html">Проигрыватель-3</a></li>
+								<li><a href="catalog.html">Проигрыватель-4</a></li>
+								<li><a href="catalog.html">Проигрыватель-5</a></li>
+							</ul>	
+						</li>
 						<li><a href="catalog.html">Школа Pioneer DJ Алматы</a></li>
 						<li><a href="catalog.html">Распрадажа</a></li>
 						<li><a href="catalog.html">Акции</a></li>
@@ -130,7 +166,6 @@
 				</nav>
 			</div>
 		</div>
-		
 	</header>
 	
 	<main>
@@ -140,8 +175,7 @@
 				<div class="big-slide"><img src="img/big-slide-1.jpg" alt=""></div>
 				<div class="big-slide"><img src="img/big-slide-1.jpg" alt=""></div>
 			</div>
-		
-			<section class="block-items new-goods">
+			<section class="block-items new-arrivals">
 				<h2 class="block-title">Новые поступления</h2>
 				<div class="slick-slider-four">
 					<article class="good-item">
@@ -222,8 +256,7 @@
 						</div>
 					</article>
 				</div>
-			</section>
-			
+			</section>	
 			<section class="block-items sale-goods">
 				<h2 class="block-title">Распрадажа</h2>
 				<div class="cols">
@@ -257,6 +290,28 @@
 									<div class="current-price">499 000 тг.</div>
 									<div class="old-price">625 000 тг.</div>
 									<div class="good-item-actions">
+										<div class="actions-discount">-<span class="discount-counter">20</span>%</div>
+									</div>
+								</div>
+							</article>
+							<article class="good-item">
+								<div class="good-item-content">
+									<a href="good-item.html" class="good-item-img"><img src="img/good-item-1.jpg" width="180" height="180" alt=""></a>
+									<a href="good-item.html" class="btn btn-good-item ">Pioneer DJM-2000</a>
+									<div class="current-price">499 000 тг.</div>
+									<div class="old-price">625 000 тг.</div>
+									<div class="good-item-actions">
+										<div class="actions-discount">-<span class="discount-counter">20</span>%</div>
+									</div>
+								</div>
+							</article>
+							<article class="good-item">
+								<div class="good-item-content">
+									<a href="good-item.html" class="good-item-img"><img src="img/good-item-1.jpg" width="180" height="180" alt=""></a>
+									<a href="good-item.html" class="btn btn-good-item ">Pioneer DJM-2000</a>
+									<div class="current-price">499 000 тг.</div>
+									<div class="old-price">625 000 тг.</div>
+									<div class="good-item-actions">
 										<div class="actions-new">Новинка</div>
 									</div>
 								</div>
@@ -265,12 +320,44 @@
 					</div>
 				</div>
 			</section>
-			
 			<section class="block-items new-goods">
 				<div class="cols">
 					<div class="col-75">
 						<h2 class="block-title">Новинки</h2>
 						<div class="slick-slider-tree">
+							<article class="good-item">
+								<div class="good-item-content">
+									<a href="good-item.html" class="good-item-img"><img src="img/good-item-1.jpg" width="180" height="180" alt=""></a>
+									<a href="good-item.html" class="btn btn-good-item ">Pioneer DJM-2000</a>
+									<div class="current-price">499 000 тг.</div>
+									<div class="old-price">625 000 тг.</div>
+									<div class="good-item-actions">
+										<div class="actions-discount">-<span class="discount-counter">20</span>%</div>
+									</div>
+								</div>
+							</article>
+							<article class="good-item">
+								<div class="good-item-content">
+									<a href="good-item.html" class="good-item-img"><img src="img/good-item-1.jpg" width="180" height="180" alt=""></a>
+									<a href="good-item.html" class="btn btn-good-item ">Pioneer DJM-2000</a>
+									<div class="current-price">499 000 тг.</div>
+									<div class="old-price">625 000 тг.</div>
+									<div class="good-item-actions">
+										<div class="actions-discount">-<span class="discount-counter">20</span>%</div>
+									</div>
+								</div>
+							</article>
+							<article class="good-item">
+								<div class="good-item-content">
+									<a href="good-item.html" class="good-item-img"><img src="img/good-item-1.jpg" width="180" height="180" alt=""></a>
+									<a href="good-item.html" class="btn btn-good-item ">Pioneer DJM-2000</a>
+									<div class="current-price">499 000 тг.</div>
+									<div class="old-price">625 000 тг.</div>
+									<div class="good-item-actions">
+										<div class="actions-discount">-<span class="discount-counter">20</span>%</div>
+									</div>
+								</div>
+							</article>
 							<article class="good-item">
 								<div class="good-item-content">
 									<a href="good-item.html" class="good-item-img"><img src="img/good-item-1.jpg" width="180" height="180" alt=""></a>
@@ -318,7 +405,6 @@
 					</div>
 				</div>
 			</section>
-			
 			<section class="block-items hit-goods">
 				<h2 class="block-title">Хиты продаж</h2>
 				<div class="slick-slider-four">
@@ -401,7 +487,6 @@
 					</article>
 				</div>
 			</section>
-			
 			<section class="block-items news-previews">
 				<h2 class="block-title">Свежие новости</h2>
 				<div class="cols">
@@ -425,7 +510,6 @@
 					</article>
 				</div>
 			</section>
-			
 			<div class="block-subscribe">
 				<div class="subscribe-title">Подпишитесь на новости</div>
 				<p>Получайте информацию об акциях и скидках первыми!</p>
@@ -463,7 +547,7 @@
 			</div>
 		</div>
 	</footer>
-	
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 	<script src="js/scripts.min.js"></script>

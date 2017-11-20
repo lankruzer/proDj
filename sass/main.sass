@@ -48,10 +48,29 @@ body
 	margin: 0
 	padding: 0
 	list-style: none
-	a 
+	a 	
+		position: relative
 		margin-right: 2px
 		padding: 3px 10px
 		box-sizing: border-box
+	.icon-soc-vis
+		opacity: 1
+		transition: 0.25s
+	a:hover .icon-soc-vis
+		opacity: 0
+
+.link-soc
+	.icon-soc-hover
+		position: absolute
+		top: 50%
+		left: 50%
+		opacity: 0
+		transition: 0.25s
+		transform: translate(-50%, -50%)
+	&:hover .icon-soc-hover
+		opacity: 1
+
+
 
 .header-contacts-img
 	align-self: flex-start
@@ -126,13 +145,14 @@ body
 		transition: 0.5s
 		visibility: hidden
 		opacity: 0
+		display: none
 	&::before
 		content: "Поиск по сайту"
 		position: absolute
 		left: 50%
 		bottom: 180%
 		z-index: 5
-		display: block
+		display: none
 		width: 180px
 		padding: 5px 15px
 		box-sizing: border-box
@@ -174,8 +194,7 @@ body
 		margin-right: 10px
 		width: 345px
 		@include input-placeholder
-			font-style: italic
-		
+			font-style: italic	
 	button
 		@include btn-blue
 
@@ -387,6 +406,37 @@ body
 
 .dropdown-menu
 	position: relative
+	.caret
+		position: absolute
+		top: 0
+		right: 0
+		width: 16px
+		height: 100%
+		text-decoration: none
+		cursor: pointer
+		@include before-absolute(49%, 50%, 8px, 2px)
+			content: ""
+			display: none
+			background-color: #fff
+			transform: translate(-50%, -50%)
+			text-decoration: none
+			transition: 0.5s
+		@include after-absolute(49%, 50%, 2px, 8px)
+			content: ""
+			display: none
+			text-decoration: none
+			background-color: #fff
+			transform: translate(-50%, -50%)
+			transition: 0.5s
+	&.active .caret::before,
+	.caret.active::before,
+	&.active .caret::after,
+	.caret.active::after
+		background-color: #38f4de
+		transform: translate(-50%, -50%) rotate(-90deg)
+	&.active .caret::before,
+	.caret.active::before
+		opacity: 0
 	ul
 		position: absolute
 		top: calc(100% - 1px)
@@ -408,15 +458,19 @@ body
 				text-transform: none
 				border: 0
 				border-bottom: 2px solid #626179
-	&:hover ul
+	&:hover ul,
+	&.active ul
 		z-index: 10
 		opacity: 1
 		visibility: visible
+	&:hover > a
+		color: #38f4de
 		
 main 
 	padding-top: 30px
 	padding-bottom: 100px
 	background-color: #f6f8f9
+	overflow: hidden
 
 .big-slider 
 	margin-bottom: 60px
@@ -458,8 +512,11 @@ h2.block-title
 	box-sizing: border-box
 	background-color: #fff
 	.btn
+		padding: 14px 10px
+		min-width: 220px
 		margin: 0 25px 8px
 		width: auto
+		line-height: 17px
 	&:hover
   		box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1);
 	&:hover .good-item-img::before,
@@ -526,7 +583,7 @@ h2.block-title
 	align-items: flex-end
 	& > div
 		position: relative
-		padding: 10px 15px
+		padding: 4px 15px
 		width: auto
 		@include font($size: 11px, $font-weight: 700, $letter-spacing: 0.03em, $color: #fff)
 		text-transform: uppercase
@@ -640,7 +697,7 @@ h2.block-title
 		width: 240px
 	label
 		position: relative	
-		@include icon-before($left: 0)
+		@include icon-before($left: 0, $width: 14px, $height: 11px)
 			background-image: url("../img/icon-mail.png")
 		padding-left: 0
 	input
@@ -714,8 +771,81 @@ li.active .footer-link
 		display: block
 		margin-bottom: 15px
 		@include font($size: 16px, $font-weight: 700, $line-height: 30px, $color: #38f4de)
+	img
+		max-width: 100%
+		width: auto
+		height: auto
+
+// Mobile menu main nav
+.mobile-header-main-nav
+	display: none
+	vertical-align: middle
+	min-width: 95px
+	padding: 0
+	margin: auto auto auto 0
+	text-align: left
+	@include font($size: 14px, $font-weight: 700, $color: #333333)
+	box-shadow: none
+	background-color: transparent
+	border: 0
+	outline: none
 		
+.lines
+	position: relative
+	display: inline-block
+	vertical-align: middle
+	margin-right: 15px
+	width: 20px
+	height: 3px
+	background-color: #2a2936
+	transition: 0.5s
+	@include before-absolute(-6px, 0, 20px, 3px)
+		background-color: #2a2936
+	@include after-absolute(auto, 0, 20px, 3px)
+		bottom: -6px
+		background-color: #2a2936
 		
+.mobile-menu-close
+	display: none
+	position: relative
+	@include close
+	font-size: 0
+	width: 40px
+	height: 30px
+	background-color: transparent
+	border: 0
+	outline: none
+
+.mobile-menu-title,
+.btn-mobile-menu-cactegories,
+.header-logo img.mobile-logo,
+.header-menu-block .header-social
+	display: none
+
+.btn-mobile-menu-cactegories
+	width: 100%
+	padding: 10px 0
+	text-align: left
+	@include font($size: 13px, $line-height: 20px, $font-weight: 600, $letter-spacing: 0.07em, $color: #fff)
+	text-transform: uppercase
+	border: 0
+	outline: none
+	box-shadow: none
+	background-color: transparent
+	box-shadow: 0px 3px 7.36px 0.64px rgba(0, 0, 0, 0.5);
+	.lines
+		background-color: #fff
+		&::before,
+		&::after
+			transition: 0.5s
+			background-color: #fff
+	&.active .lines
+		background-color: transparent
+	&.active .lines::before
+		transform: translate(0%, 6px) rotate(45deg)
+	&.active .lines::after
+		transform: translate(0%, -6px) rotate(-45deg)
+
 
 
 @import "media" // Всегда в конце

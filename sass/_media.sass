@@ -1,24 +1,409 @@
 @import "vars"
 
 /*==========  Desktop First  ==========*/
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1270px)
+	.link-to-comparison::before
+		width: 120px
+	.block-swim-basket
+		right: -5px
+		&::before
+			right: 5px
+			top: -6px
+			width: 8px
+			height: 8px
+
+@media only screen and (max-width : 1230px)
+	.container
+		width: 1170px
+	.link-to-comparison::before
+		width: 120px
+	.block-swim-basket
+		right: 0px
+		&::before
+			right: 5px
+			top: -6px
+			width: 8px
+			height: 8px
+	.good-item-content
+		width: 260px
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
+	/* media mixins */
+	body
+		font-size: 14px
 	.container 
 		width: 970px
+	.header-contacts
+		padding-bottom: 2px
+	.header-contacts-address 
+		*
+			margin-right: 20px		
+		.header-address
+			margin-right: 10px
+			padding-right: 15px
+	.header-logo
+		margin-right: 15px
+		max-width: 130px
+	.header-menu 
+		li	
+			margin-right: 10px
+			a
+				font-size: 13px
+	.header-contacts-img
+		width: 130px
+	.header-main-nav
+		margin: 15px auto 25px
+	.menu-categories a
+		padding: 10px
+		font-size: 10px
+		line-height: 12px
+	.dropdown-menu ul
+		padding: 20px
+	.block-swim-search
+		padding: 15px
+	.block-swim-basket
+		padding: 10px 15px 25px
+	.swim-basket
+		padding: 5px 0 5px
+	.swim-basket-img
+		padding-right: 5px
+		width: 45px
+	.swim-basket-remove
+		padding-left: 5px
+	.swim-basket-name
+		font-size: 13px
+	.block-swim-basket .btn
+		padding: 14px 5px
+		font-size: 14px
+	.block-swim-search input
+		padding: 12px 20px
+	.block-swim-search button
+		padding: 13px 40px	
+	.big-slider
+		margin-bottom: 50px
+	h2.block-title
+		margin-bottom: 20px
+		padding-bottom: 20px
+		font-size: 24px
+		line-height: 24px
+	.slick-slider-four .slick-arrow,
+	.slick-slider-tree .slick-arrow,
+	.slick-slider-two .slick-arrow
+		top: -62px
+	.slick-slider-four .slick-list,
+	.slick-slider-tree .slick-list,
+	.slick-slider-two .slick-list
+		margin: 0 -5px
+	.footer-nav
+		column-count: 2
+	.good-item-content .btn
+		min-width: calc(100% - 20px)	
+	.good-item-content
+		width: 96%
+	.sale-goods
+		.cols
+			flex-wrap: wrap-reverse
+			.col-50
+				margin-bottom: 10px
+				width: 100%
+	.new-goods .cols
+		.col-75
+			width: 100%
+		.col-25
+			display: none
+	.news-preview-img
+		margin-bottom: 5px
+	.news-preview .link-blue
+		margin-bottom: 5px
+	.news-preview p
+		margin: 0 0 10px
+	.block-subscribe
+		margin: 10px 0 0
+		padding: 20px 30px
+	.subscribe-title
+		width: 150px
+		font-size: 16px
 
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
 	.container
 		width: 750px
-
+	.mobile-header-main-nav,
+	.mobile-menu-title
+		display: block
+	.header-menu-block
+		position: absolute
+		top: 0
+		left: 0	
+		z-index: 50
+		padding: 50px 50px 20px
+		box-sizing: border-box
+		width: 100%
+		height: 100%
+		overflow-y: auto
+		display: none
+		background-color: #fff
+	.header-logo img:not(.mobile-logo),
+	.header-contacts .header-social,
+	.header-contacts-img,
+	.header-address
+		display: none
+	.header-logo img.mobile-logo
+		display: block
+		width: 200px
+		height: auto
+		margin: 0 auto
+	.mobile-menu-close
+		position: absolute
+		top: 45px
+		right: 45px
+		display: block
+	.mobile-menu-title
+		position: relative
+		display: block
+		padding-bottom: 16px
+		margin-bottom: 10px
+		@include font($size: 18px, $line-height: 20px, $font-weight: 700, $letter-spacing: 0.07em, $color: #333333)
+		text-transform: uppercase
+		@include after-absolute(auto, 0, 50px, 3px)
+			bottom: 0
+			background-color: #0079c2
+	.header-contacts-address .header-address
+		margin-right: 0
+		padding-right: 0
+		border-right: 0
+	.header-menu
+		flex-direction: column
+		margin-top: 15px
+		margin-bottom: 20px
+		li a
+			position: relative
+			display: block
+			margin-bottom: 15px
+			padding-left: 20px
+			width: 100%
+			box-sizing: border-box
+			@include font($size: 15px, $line-height: 20px, $font-weight: 600, $letter-spacing: 0.07em, $color: #333333)
+			@include before-absolute(50%, 0, 5px, 5px)
+				border-top: 2px solid #0079c2
+				border-right: 2px solid #0079c2
+				transform: translate(0, -20%) rotate(45deg)
+		li.active a::before
+			border-color: #b71e3e
+	.header-social
+		margin-left: -10px
+	.header-contacts-address a
+		font-size: 16px
+		letter-spacing: 0.05em
+		font-weight: 700
+	.header-contacts-address *:last-of-type
+		margin-right: 0
+	.header-contacts
+		margin-bottom: 30px
+		padding: 6px 0
+		border: 0
+	.header-menu-block .header-social
+		display: flex
+	.btn-mobile-menu-cactegories
+		display: block
+	.menu-categories 
+		display: none
+	.header-menu-categories
+		background-color: rgb(42, 41, 54);
+	.menu-categories
+		padding: 20px 0 40px
+	.menu-categories a
+		padding-left: 0
+		padding-right: 20px
+		justify-content: flex-start
+		font-size: 12px
+		letter-spacing: 0.03em
+		font-weight: 700
+		text-align: left
+		border: 0
+		border-bottom: 2px solid #504e66
+		color: #f8f8f8
+		background-color: #2a2936
+	.dropdown-menu .caret::before,
+	.dropdown-menu .caret::after
+		display: block
+	.menu-categories li:not(:last-of-type)
+		margin-right: 0
+	.dropdown-menu ul
+		position: relative
+		display: none
+		padding: 0
+		width: 100%
+		box-sizing: border-box
+		a
+			padding-left: 20px
+	.dropdown-menu .caret
+		height: 34px
+	.dropdown-menu ul li a
+		padding-left: 20px
+	.footer-nav
+		margin: 0 auto
+		column-count: 1
+	.copy,
+	.footer-cards
+		margin-bottom: 30px
+		min-width: 200px
+	.footer-nav
+		margin-bottom: 20px
+		width: 32%
+	.footer-nav li
+		width: 100%
+	footer
+		padding: 45px 0
+	footer .container
+		justify-content: center
+	.slick-slider-four .slick-list,
+	.slick-slider-tree .slick-list,
+	.slick-slider-two .slick-list
+		margin: 0 -5px
+	.good-item-content
+		width: 95%
+	.news-previews
+		.cols
+			flex-wrap: wrap
+		.col-33
+			width: calc(100% / 2 - 15px)
+			margin-bottom: 30px
+	.block-subscribe
+		flex-wrap: wrap
+		align-items: center
+	.subscribe-title
+		width: calc(40% - 15px)	
+	.block-subscribe p
+		width: calc(60% - 15px)
+	.form-subscribe
+		display: flex
+		margin-top: 20px
+		width: 100%
+		label
+			width: calc(100% - 205px)
+			margin-right: 25px
+			input
+				width: 100%
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
 	.container 
 		width: 100%
+	footer .container
+		justify-content: flex-start
+		flex-wrap: wrap
+	.footer-nav
+		width: 100%
+		order: 3
+	.copy
+		margin-right: 50px
+	.footer-cards
+		margin: 0 0 30px
+	.footer-cards .cards-title
+		margin-bottom: 20px
+		line-height: 16px
+	.slick-slider-four .slick-arrow.slick-prev,
+	.slick-slider-tree .slick-arrow.slick-prev,
+	.slick-slider-two .slick-arrow.slick-prev	
+		right: 55px
+	h2.block-title
+		padding-bottom: 10px
+		padding-right: 110px
+		box-sizing: border-box
+		font-size: 18px
+		line-height: 18px
+		&::before
+			height: 3px
+	.slick-slider-four .slick-arrow,
+	.slick-slider-tree .slick-arrow,
+	.slick-slider-two .slick-arrow	
+		width: 40px
+		height: 40px
+	.news-previews
+		.cols
+			flex-wrap: wrap
+		.col-33
+			width: calc(100%)
+			margin-bottom: 30px
+	.news-preview .link-blue
+		margin-bottom: 0
+		font-size: 16px
+	.subscribe-title
+		margin-bottom: 20px
+		width: 100%
+		text-align: center
+	.block-subscribe p
+		margin-bottom: 20px
+		width: 100%
+		text-align: center
+	.form-subscribe
+		display: flex
+		margin-top: 20px
+		width: 100%
+		label
+			width: calc(100% - 205px)
+			margin-right: 25px
+			input
+				width: 100%
 
+	
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 560px)
+	.mobile-menu-close
+		top: 35px
+		right: 30px
+	.header-menu-block
+		padding: 40px 35px 20px
+	.header-main-nav .container nav,
+	.header-logo
+		display: block
+		margin: 0 auto
+		width: 100%
+		max-width: inherit
+
+	.header-logo
+		text-align: center
+
+	.header-logo img
+		max-width: inherit
+		width: 200px
+		height: auto
+
+	.header-user-block,
+	.header-contacts-address .link-email
+		display: none
+	.header-contacts-address *
+		margin-right: 0
+	.slick-slider-four .slick-list,
+	.slick-slider-tree .slick-list,
+	.slick-slider-two .slick-list
+		margin: 0
+	.good-item-content
+		width: 100%
+	.block-subscribe
+		padding: 15px 20px
+		p
+			margin-bottom: 0
+	.form-subscribe
+		flex-wrap: wrap
+		justify-content: center
+		width: 100%
+		label
+			width: 100%
+			margin-right: 0
+			margin-bottom: 10px
+			input
+				width: 100%
+				margin: 0
+	.block-items
+		padding-bottom: 30px
+	main
+		padding-bottom: 60px
+	
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
@@ -28,31 +413,3 @@
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
 	/**/
-
-
-/*==========  Mobile First  ==========*/
-
-/* Custom, iPhone Retina */
-@media only screen and (min-width : 320px)
-	/**/
-
-
-/* Extra Small Devices, Phones */
-@media only screen and (min-width : 480px)
-	/**/
-
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px)
-	/**/
-
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width : 992px)
-	/**/
-
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px)
-	/**/
-

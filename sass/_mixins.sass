@@ -1,12 +1,12 @@
 @mixin input-placeholder
-		&::-webkit-input-placeholder
-			@content
-		&::-moz-placeholder
-		    @content
-		&:-moz-placeholder
-		    @content
-		&:-ms-input-placeholder
-		    @content
+	&::-webkit-input-placeholder
+		@content
+	&::-moz-placeholder
+		@content
+	&:-moz-placeholder
+		@content
+	&:-ms-input-placeholder
+		@content
 
 @mixin font($size: 15px, $line-height: 22px, $font-weight: 400, $letter-spacing: 0, $style: normal, $color: #424242)
 	font-family: 'Open Sans', sans-serif
@@ -89,6 +89,8 @@
 	outline: none
 	cursor: pointer
 	transition: 0.5s
+	&:hover
+		box-shadow: 0px 5px 10px 0px transparent 
 		
 @mixin btn-blue
 	@include btn
@@ -244,3 +246,13 @@
 	border-top: $size solid transparent
 	border-bottom: $size solid transparent
 	border-right: $size solid $color
+
+@mixin close
+	@include before-absolute(14px, 50%, 20px, 3px)
+		background-color: #333333
+		transform: translate(-50%, -50%) rotate(45deg)
+	@include after-absolute(auto, 50%, 20px, 3px)
+		bottom: 13px
+		background-color: #333333
+		transform: translate(-50%, -50%) rotate(-45deg)
+	
