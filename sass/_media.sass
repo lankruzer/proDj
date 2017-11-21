@@ -27,6 +27,8 @@
 			height: 8px
 	.good-item-content
 		width: 260px
+	.inner-page-title
+		width: 1140px
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
@@ -125,7 +127,29 @@
 	.subscribe-title
 		width: 150px
 		font-size: 16px
-
+	.good-big-imgs a,
+	.good-big-img-content
+		min-height: 190px
+	.inner-page-title
+		width: 940px
+	.good-subtitle
+		width: 100%
+	.good-current-cost
+		font-size: 24px
+	.good-top-cost .btn-red
+		min-width: 190px
+	.good-small-img-content
+		min-height: 70px
+	.good-bottom-content
+		margin-bottom: 80px
+		padding: 30px 40px 50px
+	.tabs
+		padding: 0 20px 30px
+	.videoWrapper
+		margin: 0 auto 40px
+		width: 90%
+	.tab-description p
+		margin-bottom: 20px
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
@@ -288,6 +312,51 @@
 			margin-right: 25px
 			input
 				width: 100%
+	main.inner-page
+		padding-top: 10px
+	.inner-page-title
+		width: 100%
+		background-color: #2d2d2d
+		border-bottom: 4px solid #0c63b5 
+		.container
+			width: 750px
+			border: 0
+			background-color: #2d2d2d
+	.good-top-info
+		padding: 25px 20px
+		& > .cols
+			flex-direction: column-reverse
+			& > .col-40
+				width: 100%
+	.good-top-text .good-top-imgs
+		display: block
+	.good-top-info-content
+		width: 100%
+	.good-bottom-content
+		margin-bottom: 60px
+		padding: 20px 30px	40px
+		img
+			margin-bottom: 10px
+	.tabs
+		padding: 0 10px 20px
+	.tabs-nav li
+		padding: 10px
+	.tab-description-content
+		flex-wrap: wrap
+		text-align: center
+		.col-25,
+		.col-75
+			width: 100%
+			margin-bottom: 30px
+	.tab-description p
+		width: 100%
+	.good-content-cards .col-25
+		width: calc(50% - 15px)
+	.good-content-card-img img
+		width: 100%
+		max-width: inherit
+		height: auto
+		margin-bottom: 0
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
@@ -349,7 +418,39 @@
 			margin-right: 25px
 			input
 				width: 100%
-
+	.inner-page-title .container
+		width: 100%
+		flex-direction: column
+		align-items: center
+		.breadcrumbs
+			width: 100%
+			justify-content: center
+			flex-wrap: wrap
+	.good-top-info-content
+		margin-bottom: 50px
+		text-align: center
+		.cols
+			flex-direction: column
+			align-items: center
+			.col-40,
+			.col-60
+				width: 100%
+	.good-top-text
+		margin-bottom: 40px
+	.good-bottom-content
+		margin-bottom: 40px
+		padding: 10px 20px 30px
+	.tabs-nav li
+		padding: 5px 8px
+		font-size: 14px
+	.videoWrapper
+		margin-bottom: 20px
+		width: 100%
+	.tab-description p
+		margin-bottom: 10px
+	table td,
+	table th
+		padding: 10px 8px
 	
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 560px)
@@ -403,7 +504,35 @@
 		padding-bottom: 30px
 	main
 		padding-bottom: 60px
-	
+	.good-top-info-content
+		margin-bottom: 30px
+	.good-big-imgs,
+	.good-big-img-content,
+	.good-big-imgs a
+		height: auto
+		min-height: 180px
+	.good-top-text
+		margin-bottom: 20px
+	.good-content-cards .col-25
+		width: 100%
+	.tabs-nav
+		flex-wrap: wrap
+		border: 0
+		li
+			width: 100%
+			text-align: center
+			margin-bottom: 15px
+	table 
+		text-align: center
+		tr 
+			display: flex
+			flex-wrap: wrap
+			border-bottom: 2px solid #d1d1d1
+			td,
+			th
+				width: 100%
+				border-top: 0
+				border-width: 1px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
