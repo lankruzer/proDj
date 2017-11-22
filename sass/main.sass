@@ -1090,4 +1090,17 @@ tr
 tr:nth-of-type(2n + 1)
 	background-color: #f6f8f9
 
+//catalog.html
+.catalog-items 
+	.cols
+		justify-content: flex-start
+		flex-wrap: wrap
+	.good-item
+		margin-bottom: 20px
+	.good-item:not(:nth-of-type(4n))
+		margin-right: 20px
+	.good-item-content
+		margin: 0
+		width: 100%
+
 @import "media" // Всегда в конце

@@ -365,6 +365,16 @@
 		.good-top-imgs
 			margin-bottom: 60px
 			width: 100%
+	.catalog-items
+		padding-bottom: 40px
+		.col-25
+			width: calc(100% / 3 - 15px)
+		.good-item
+			margin-right: 22px
+		.good-item:not(:nth-of-type(4n))
+			margin-right: 22px
+		.good-item:nth-of-type(3n)
+			margin-right: 0
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
@@ -467,7 +477,22 @@
 		padding: 10px 8px
 	.tab-description-content
 		padding-bottom: 0
+	.catalog-items
+		padding-bottom: 30px
+		.cols
+			justify-content: space-between
+		.col-25
+			width: calc(100% / 2 - 15px)
+		.good-item
+			margin-right: 0
+		.good-item:not(:nth-of-type(4n))
+			margin-right: 0
+		.good-item:nth-of-type(3n)
+			margin-right: 0
+		.good-item:nth-of-type(2n)
+			margin-right: 0
 	
+
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 560px)
 	.mobile-menu-close
@@ -551,6 +576,21 @@
 				border-width: 1px
 	.good-top-info-content .cols .good-top-imgs
 		margin-bottom: 30px
+	.catalog-items
+		padding-bottom: 20px
+		.cols
+			justify-content: space-between
+		.col-25
+			width: 100%
+		.good-item
+			margin-right: 0
+		.good-item:not(:nth-of-type(4n))
+			margin-right: 0
+		.good-item:nth-of-type(3n)
+			margin-right: 0
+		.good-item:nth-of-type(2n)
+			margin-right: 0
+	
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
