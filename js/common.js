@@ -187,14 +187,29 @@ $( document ).ready(function() {
 					for (var y = 0; y < btn_tabs.length; y++) {
 						if(btn_tabs[y].classList.contains("active")) {
 							btn_tabs[y].classList.remove("active");
+							$( tab_items[y] ).slideUp(250);
 							tab_items[y].classList.remove("active");
+							
 						}
 					};
 					btn_tab.classList.add("active");
+					$( tab_items[i] ).slideDown(250);
 					tab_items[i].classList.add("active");
 				}
 			})
 		})
 	}
+	
+	if( $( document ).width() < 992 ) {
+		$( ".good-top-imgs" ).appendTo( ".good-top-info-content .cols" );
+	}
+	
+	$( window ).resize(function() {
+		if( $( document ).width() < 992 ) {
+			$( ".good-top-imgs" ).appendTo( ".good-top-info-content .cols" );
+		} else {
+			$( ".good-top-imgs" ).prependTo( ".good-top-info > .cols" );
+		}
+	})
 	
 });

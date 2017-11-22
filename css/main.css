@@ -2469,6 +2469,7 @@ li.active .footer-link::before {
 
 .tabs-content li {
   display: none;
+  list-style: none;
 }
 
 .tabs-content li.active {
@@ -2535,7 +2536,7 @@ li.active .footer-link::before {
 }
 
 .tabs {
-  padding: 0 30px 40px;
+  padding: 0 30px 0;
   width: 100%;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -2591,6 +2592,10 @@ li.active .footer-link::before {
 .good-content-cards p {
   margin: 0;
   line-height: 22px;
+}
+
+.tab-description-content {
+  padding-bottom: 30px;
 }
 
 h1 {
@@ -3212,6 +3217,7 @@ tr:nth-of-type(2n + 1) {
   }
   .tab-description p {
     width: 100%;
+    text-align: left;
   }
   .good-content-cards .col-25 {
     width: -webkit-calc(50% - 15px);
@@ -3222,6 +3228,18 @@ tr:nth-of-type(2n + 1) {
     max-width: inherit;
     height: auto;
     margin-bottom: 0;
+  }
+  .tab-description-content {
+    padding-bottom: 10px;
+  }
+  .good-top-info-content .cols {
+    -webkit-flex-wrap: wrap-reverse;
+        -ms-flex-wrap: wrap-reverse;
+            flex-wrap: wrap-reverse;
+  }
+  .good-top-info-content .cols .good-top-imgs {
+    margin-bottom: 60px;
+    width: 100%;
   }
 }
 
@@ -3370,6 +3388,27 @@ tr:nth-of-type(2n + 1) {
   .good-top-info-content .cols .col-60 {
     width: 100%;
   }
+  .good-top-info-content .cols .col-40.good-top-imgs {
+    -webkit-box-ordinal-group: 1;
+    -webkit-order: 0;
+       -moz-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+  .good-top-info-content .cols .col-60.good-top-text {
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+       -moz-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .good-top-info-content .cols .col-40.good-top-cost {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+       -moz-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
   .good-top-text {
     margin-bottom: 40px;
   }
@@ -3391,6 +3430,9 @@ tr:nth-of-type(2n + 1) {
   table td,
   table th {
     padding: 10px 8px;
+  }
+  .tab-description-content {
+    padding-bottom: 0;
   }
 }
 
@@ -3510,6 +3552,9 @@ tr:nth-of-type(2n + 1) {
     width: 100%;
     border-top: 0;
     border-width: 1px;
+  }
+  .good-top-info-content .cols .good-top-imgs {
+    margin-bottom: 30px;
   }
 }
 

@@ -350,6 +350,7 @@
 			margin-bottom: 30px
 	.tab-description p
 		width: 100%
+		text-align: left
 	.good-content-cards .col-25
 		width: calc(50% - 15px)
 	.good-content-card-img img
@@ -357,6 +358,13 @@
 		max-width: inherit
 		height: auto
 		margin-bottom: 0
+	.tab-description-content
+		padding-bottom: 10px
+	.good-top-info-content .cols 
+		flex-wrap: wrap-reverse
+		.good-top-imgs
+			margin-bottom: 60px
+			width: 100%
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
@@ -435,6 +443,12 @@
 			.col-40,
 			.col-60
 				width: 100%
+			.col-40.good-top-imgs
+				order: 0
+			.col-60.good-top-text
+				order: 1
+			.col-40.good-top-cost
+				order: 2
 	.good-top-text
 		margin-bottom: 40px
 	.good-bottom-content
@@ -451,6 +465,8 @@
 	table td,
 	table th
 		padding: 10px 8px
+	.tab-description-content
+		padding-bottom: 0
 	
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 560px)
@@ -533,6 +549,8 @@
 				width: 100%
 				border-top: 0
 				border-width: 1px
+	.good-top-info-content .cols .good-top-imgs
+		margin-bottom: 30px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
