@@ -1068,20 +1068,20 @@ h3
 	margin: 15px 0
 	@include font($size: 20px, $line-height: 26px, $letter-spacing: 0, $font-weight: 700, $color: #424242)
 	
-table 
+table.table-characteristics 
 	width: 100%
 	border-collapse: collapse
 	td,
 	th
 		padding: 13px 20px
 
-tr.tbody-head th
+table.table-characteristics tr.tbody-head th
 	width: 100%
 	@include font($size: 16px, $line-height: normal, $letter-spacing: 0.05em, $font-weight: 700, $color: #fff)
 	background-color: #558eca
 	border: 2px solid #558eca
 	border-bottom: 2px solid #d1d1d1
-tr 
+table.table-characteristics tr 
 	transition: 0.5s
 	&:hover
 		background-color: #e9f4ff !important
@@ -1090,7 +1090,7 @@ tr
 		width: 50%
 		border: 2px solid #d1d1d1
 
-tr:nth-of-type(2n + 1)
+table.table-characteristics tr:nth-of-type(2n + 1)
 	background-color: #f6f8f9
 
 //catalog.html
