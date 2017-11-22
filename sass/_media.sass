@@ -150,6 +150,14 @@
 		width: 90%
 	.tab-description p
 		margin-bottom: 20px
+	.catalog-filter select
+		padding: 10px 20px
+	.block-contacts
+		padding: 60px 60px 90px
+		.col-50
+			margin-bottom: 50px
+	.contact-with-icon address
+		width: 75%
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
@@ -375,6 +383,16 @@
 			margin-right: 22px
 		.good-item:nth-of-type(3n)
 			margin-right: 0
+	.block-title.col-75
+		width: calc(70% - 15px)
+	.block-contacts
+		padding: 35px 35px 80px
+		.col-50
+			margin-bottom: 40px
+	.contact-with-icon address
+		margin-bottom: 20px
+		width: 90%
+
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
@@ -491,7 +509,36 @@
 			margin-right: 0
 		.good-item:nth-of-type(2n)
 			margin-right: 0
-	
+	.block-title.col-75,
+	.catalog-items .col-25
+		width: 100%
+	.catalog-items .col-25
+		margin-bottom: 40px
+	.block-title.block-title-small
+		padding-bottom: 15px
+		margin-bottom: 20px
+		font-size: 18px
+	.block-contacts 
+		padding: 25px 25px 70px
+		.col-50
+			margin-bottom: 30px
+	.contact-with-icon
+		margin-bottom: 15px
+		&::before
+			width: 40px
+			height: 40px
+		span
+			font-size: 14px
+		address
+			margin-bottom: 10px
+			width: 100%
+	.contacts-form 
+		input,
+		textarea
+			margin-bottom: 10px
+			padding: 10px 15px
+		textarea
+			margin-bottom: 15px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 560px)
@@ -590,6 +637,10 @@
 			margin-right: 0
 		.good-item:nth-of-type(2n)
 			margin-right: 0
+	.block-contacts 
+		padding: 15px 15px 50px
+		.col-50
+			width: 100%
 	
 
 /* Extra Small Devices, Phones */

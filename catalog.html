@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	
-	<title>Index page | Pro DJ</title>
+	<title>Catalog | Pro DJ</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=cyrillic" rel="stylesheet">
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
@@ -184,7 +184,16 @@
 		<div class="container">
 			
 			<section class="block-items catalog-items">
-				<h2 class="block-title">Контроллеры</h2>
+				<div class="cols">
+					<h2 class="block-title col-75">Контроллеры</h2>
+					<div class="col-25 catalog-filter">
+						<select name="catalog-filter">
+							<option value="start">Исходная сортировка</option>
+							<option value="cheap">Сначала дешевые</option>
+							<option value="expensive">Сначала дорогие</option>
+						</select>	
+					</div>
+				</div>
 				<div class="cols">
 					<article class="good-item col-25">
 						<div class="good-item-content">
