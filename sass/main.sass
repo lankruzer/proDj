@@ -351,8 +351,8 @@ body
 	position: relative
 	display: inline-block
 	vertical-align: top
-	width: 25px
-	height: 25px
+	width: 26px
+	height: 26px
 	box-sizing: border-box
 	font-size: 0
 	background-color: #fff
@@ -1213,20 +1213,151 @@ table.table-characteristics tr:nth-of-type(2n + 1)
 	height: 400px
 
 //basket.html
-.form-good-item
+.form-good-item	
+	display: flex
 	width: 100%
 	text-align: left
+	justify-content: space-between
+	align-items: center
+	width: 100%
+	@include font($size: 16px, $line-height: 18px, $font-weight: 600, $letter-spacing: 0, $style: normal, $color: #000000)
 	border-bottom: 3px solid #0081cb
-	table
-		width: 100%
-	th,
-	td
+	&:last-of-type
+		margin-bottom: 35px
+	& > div
+		flex-grow: 1
 		padding: 15px
 		box-sizing: border-box
-	th:first-of-type
-		max-width: 339px
-		width: 339px
-
+.basket-good-img
+	flex-basis: 115px
+.basket-good-name
+	flex-basis: 230px
+	@include font($size: 16px, $line-height: 18px, $font-weight: 600, $letter-spacing: 0, $style: normal, $color: #b71e3e)
+	a
+		@include link($color: #b71e3e, $decoration-hover: underline)
+.basket-good-cost
+	flex-basis: 195px
+.basket-amount
+	flex-basis: 220px
+.basket-good-cost-amount
+	flex-basis: 185px
+.form-good-item
+	padding: 15px 0
+.good-item-head
+	padding: 0
+.form-good-item.good-item-head > div
+	flex-grow: 0
+	font-size: 18px
+.good-item-head .basket-good-img
+	flex-basis: 280px
+.good-item-head .basket-good-cost
+	flex-basis: 130px
+.good-item-head .basket-amount
+	flex-basis: 150px
+.good-item-head .basket-good-cost-amount
+	flex-basis: 250px
+.amount-counter
+	display: inline-block
+	vertical-align: middle
+	width: 125px
+	.amount-minus,
+	.amount-input,
+	.amount-plus,
+		display: inline-block
+		vertical-align: middle		
+	input
+		text-align: center
+		@include input
+		margin: auto 3px
+		padding: 0 5px
+		width: 45px
+		min-height: 32px
+		@include font($size: 15px, $line-height: 18px, $font-weight: 700, $letter-spacing: 0, $style: normal, $color: #000000)
+		border-color: #ebebeb
+		&:hover,
+		&:focus,
+		&:active
+			border-color: #aeaeae
+	.amount-minus,
+	.amount-plus
+		width: 30px
+		@include input
+		padding: 3px 0
+		min-height: 32px
+		text-align: center
+		@include font($size: 18px, $line-height: 18px, $font-weight: 700, $letter-spacing: 0, $style: normal, $color: #000000)
+		border-color: #ebebeb	
+		&:hover,
+		&:focus,
+		&:active
+			border-color: #aeaeae
+		cursor: pointer
+input[type='number']
+	appearance: textfield
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+	appearance: none
+.basket-form-coupon
+	display: flex
+	justify-content: space-between
+	margin-bottom: 70px
+	width: 100%
+	input 
+		width: 220px
+		margin-right: 10px
+		@include input
+		&:hover,
+		&:active,
+		&:focus,
+			border-color: #0081cb
+	.btn
+		padding: 17px 40px
+		font-size: 15px
+		line-height: 16px
+		font-weight: 600
+		background-color: #0081cb
+.basket-full-cost
+	margin: 0 0 0 auto
+	.block-title
+		margin-bottom: 20px
+		@include font($size: 22px, $letter-spacing: 0.03em, $font-weight: 600, $color: #424242)
+	table
+		margin-bottom: 20px
+		border-collapse: collapse
+	th,
+	td
+		padding: 10px 20px
+		width: 200px
+		text-align: left
+		@include font($size: 16px, $line-height: 26px, $font-weight: 400, $color: #424242)
+		border: 2px solid #e0e0e0
+		box-sizing: border-box
+	th
+		background-color: #f7f7f7
+	tr:last-of-type
+		td,
+		th
+			font-weight: 700
+	.btn
+		position: relative
+		width: 100%
+		vertical-align: middle
+		font-size: 18px
+		font-weight: 700
+		letter-spacing: 0.05em
+		text-transform: uppercase
+		background-color: #b71e3e
+		&::after
+			content: ""
+			display: inline-block
+			margin-left: 15px
+			width: 10px
+			height: 10px
+			border-top: 3px solid #fff
+			border-right: 3px solid #fff
+			transform: rotate(45deg)
+			
+//checkout.html
 .block-checkout
 	padding: 70px 100px
 	background-color: #fff
