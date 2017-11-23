@@ -222,5 +222,12 @@ $( document ).ready(function() {
 		})
 	}
 	
-	
+	/* basket */
+	if( $( ".amount-counter" )) {
+		console.log("amount")
+		$( ".amount-minus" ).click(function() {
+			console.log("minus")
+			$( this ).next( "input" ).value()  = +$( this ).next( "input" ).value() - 1
+		})
+	}
 });
