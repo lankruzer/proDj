@@ -213,5 +213,14 @@ $( document ).ready(function() {
 	})
 	
 	
+	if( $( ".type-pay") ) {
+		$( ".type-pay label" ).click(function(){
+			$( ".type-pay label ").not( this ).find($( ".input-radio-info" )).slideUp(250);
+			$(this).find($( ".input-radio-info" )).slideDown(500);
+			$( ".type-pay label" ).not( this ).css("margin-bottom", "5px");
+			$(this).css("margin-bottom", "20px");
+		})
+	}
+	
 	
 });

@@ -633,8 +633,14 @@ h2.block-title
 .col-40
 	width: calc(40% - 15px)
 
+.col-45
+	width: calc(45% - 15px)
+
 .col-50
 	width: calc(50% - 15px)
+
+.col-55
+	width: calc(55% - 15px)
 
 .col-60
 	width: calc(60% - 15px)
@@ -1205,5 +1211,140 @@ table.table-characteristics tr:nth-of-type(2n + 1)
 .map
 	width: 100%
 	height: 400px
+
+//basket.html
+.form-good-item
+	width: 100%
+	text-align: left
+	border-bottom: 3px solid #0081cb
+	table
+		width: 100%
+	th,
+	td
+		padding: 15px
+		box-sizing: border-box
+	th:first-of-type
+		max-width: 339px
+		width: 339px
+
+.block-checkout
+	padding: 70px 100px
+	background-color: #fff
+	.block-title-small::before
+		display: none
+	.cols
+		input,
+		select
+			margin-bottom: 15px
+		.cols input
+			margin-bottom: 20px
+	label span
+		display: block
+		margin-bottom: 5px
+		font-weight: 700
+		color: #424242
+	label span.bold
+		margin-bottom: 10px
+		font-size: 18px
+	input,
+	textarea,
+	select
+		@include input
+		width: 100%
+		@include input-placeholder
+			font-style: italic
+		&:hover,
+		&:active,
+		&:focus
+			border-color: #0079c2
+	textarea
+		min-height: 95px
+	
+.order-info
+	padding: 40px 50px
+	box-sizing: border-box
+	width: 100%
+	text-align: left
+	border: 10px solid #f6f8f9 
+	box-shadow: 0px 3px 18px 2px rgba(0, 0, 0, 0.15);
+
+.order-info-table
+	margin-bottom: 50px
+	width: 100%
+	border-collapse: collapse
+	th
+		border-bottom: 3px solid #0079c2
+	th,
+	td
+		padding: 10px 0
+.order-tr-border td
+	border-bottom: 2px solid #d8d8d8
+.order-good-name
+	@include font($size: 16px, $font-weight: 700, $color: #b71e3e)
+
+.tr-padding 
+	td:first-of-type
+		padding: 10px
+
+.tr-result
+	font-weight: 700
+	background-color: #f7f7f7
+
+.type-pay label
+	display: block
+	margin-bottom: 5px
+	cursor: pointer
+	&:first-of-type
+		margin-bottom: 20px
+	&:last-of-type
+		margin-bottom: 30px !important
+.input-radio-name
+	padding: 15px 22px
+	@include font($size: 16px, $font-weight: 700, $letter-spacing: 0.03em, $color: #fff)
+	background-color: #558eca
+	input
+		display: none
+	.input-radio
+		position: relative
+		display: inline-block
+		vertical-align: middle
+		margin-right: 10px
+		width: 16px
+		height: 16px
+		box-sizing: border-box
+		border: 2px solid #fff
+		border-radius: 50%
+		@include before-absolute(50%, 50%, 6px, 6px)
+			background-color: #fff
+			border-radius: 50%
+			transform: translate(-50%, -50%)
+			transition: 0.5s
+			opacity: 0
+	input:checked + .input-radio::before
+		opacity: 1
+		
+.type-pay .block-title-small
+	margin-bottom: 0
+
+.input-radio-info
+	display: none
+	padding: 15px 22px
+	width: 100%
+	box-sizing: border-box
+	font-size: 15px
+	font-weight: 600
+	letter-spacing: 0
+	border: 2px solid #d1d1d1
+	
+label:first-of-type .input-radio-info
+	display: block
+
+.order-info .btn-red
+	width: 100%
+	font-size: 18px
+	letter-spacing: 0.05em
+	font-weight: 700
+	text-transform: uppercase
+	background-color: #b71e3e
 
 @import "media" // Всегда в конце

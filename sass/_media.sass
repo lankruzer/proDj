@@ -158,6 +158,11 @@
 			margin-bottom: 50px
 	.contact-with-icon address
 		width: 75%
+	//checkout.html
+	.block-items
+		padding-bottom: 0
+	.block-checkout
+		padding: 50px 60px
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
@@ -394,7 +399,13 @@
 		address
 			margin-bottom: 20px
 			width: 90%
-
+	//checkout.html
+	.block-checkout	> .cols
+		flex-wrap: wrap
+		& > .col-45,
+		& > .col-55
+			margin-bottom: 60px
+			width: 100%
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
@@ -542,6 +553,11 @@
 			padding: 10px 15px
 		textarea
 			margin-bottom: 15px
+	//checkout.html
+	.block-checkout
+		padding: 40px 30px 0
+		label span.bold
+			font-size: 16px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 560px)
@@ -644,6 +660,42 @@
 		padding: 15px 15px 50px
 		.col-50
 			width: 100%
+	//checkout.html
+	.block-checkout
+		padding: 30px 10px 0
+		label span.bold
+			font-size: 14px
+		.cols
+			flex-wrap: wrap
+		.col-50
+			width: 100%
+	.order-info
+		padding: 25px 5px
+		border-width: 5px
+	.order-info-table
+		margin-bottom: 40px
+	.order-good-name
+		font-size: 13px
+	.order-info-table	
+		td,
+		th
+			padding: 5px
+	.tr-padding td:first-of-type
+		padding: 5px
+	.block-title.block-title-small
+		margin-bottom: 0
+	.input-radio-name
+		padding: 10px
+		font-size: 14px
+		line-height: 18px
+		.input-radio
+			margin-right: 5px
+	.input-radio-info
+		padding: 10px
+	.order-info .btn-red
+		padding: 18px 5px
+		font-size: 14px
+		line-height: 20px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
