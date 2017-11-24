@@ -172,6 +172,14 @@
 		padding-bottom: 0
 	.block-checkout
 		padding: 50px 60px
+	//comparison.html
+	.table-comparison
+		th,
+		td
+			padding: 15px 17px
+			width: 310px
+			min-width: 310px
+			max-width: 310px
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
@@ -439,7 +447,16 @@
 		& > .col-55
 			margin-bottom: 60px
 			width: 100%
-
+	//comparison.html
+	.table-comparison
+		th,
+		td
+			padding: 8px 8px
+			width: 200px
+			min-width: 200px
+			max-width: 200px
+	.tabs-comparison .tabs-nav
+		flex-wrap: wrap
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
@@ -641,6 +658,16 @@
 		padding: 40px 30px 0
 		label span.bold
 			font-size: 16px
+	//comparison.html
+	.block-comparison
+		padding: 20px 20px 40px
+	.table-comparison th:first-of-type
+		width: 180px
+		max-width: 180px
+		min-width: 180px
+	.table-comparison
+		tbody tr:last-of-type td
+			padding-bottom: 15px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 560px)
@@ -788,6 +815,9 @@
 		td,
 		th
 			padding: 5px 10px
+	//comparison.html
+	.tabs-comparison .tabs-nav li
+		margin: 0 0 5px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)

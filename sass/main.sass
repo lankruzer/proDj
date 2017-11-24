@@ -53,6 +53,7 @@ body
 		margin-right: 2px
 		padding: 3px 10px
 		box-sizing: border-box
+		text-decoration: none
 	.icon-soc-vis
 		opacity: 1
 		transition: 0.25s
@@ -199,6 +200,7 @@ body
 		@include btn-blue
 
 .block-header-search:hover .block-swim-search
+	width: 543px
 	z-index: 5
 	visibility: visible
 	opacity: 1
@@ -391,6 +393,7 @@ body
 	li:not(:last-of-type)
 		margin-right: 5px
 	a 		
+		max-width: 168px
 		height: 100%
 		padding: 15px
 		box-sizing: border-box
@@ -675,8 +678,11 @@ h2.block-title
 	display: flex
 	flex-direction: column
 	align-items: flex-start
+	a
+		width: 100%
 	p
 		margin: 0 0 15px
+		width: 100%
 	.btn
 		font-size: 12px
 		font-weight: 700
@@ -1077,9 +1083,11 @@ h3
 table.table-characteristics 
 	width: 100%
 	border-collapse: collapse
+	text-align: left
 	td,
 	th
 		padding: 13px 20px
+		text-align: left
 
 table.table-characteristics tr.tbody-head th
 	width: 100%
@@ -1260,6 +1268,8 @@ table.table-characteristics tr:nth-of-type(2n + 1)
 	display: inline-block
 	vertical-align: middle
 	width: 125px
+	& * 
+		user-select: none
 	.amount-minus,
 	.amount-input,
 	.amount-plus,
@@ -1477,5 +1487,134 @@ label:first-of-type .input-radio-info
 	font-weight: 700
 	text-transform: uppercase
 	background-color: #b71e3e
+
+//comparison.html
+.block-comparison
+	padding: 40px 40px 100px
+	box-sizing: border-box
+	background-color: #fff
+.form-comparison
+	margin: 0 0 25px auto
+	display: block
+	text-align: right
+	label
+		display: block
+		margin-bottom: 5px
+		@include font($size: 16px, $line-height: 22px, $font-weight: 600, $letter-spacing: 0.03em, $color: #424242)
+		cursor: pointer
+		user-select: none
+.input-checkbox
+	position: relative
+	display: inline-block
+	margin-right: 8px
+	width: 12px
+	height: 12px
+	box-sizing: border-box
+	border: 2px solid #424242
+	transition: 0.5s
+	&:hover,
+	&:active
+		border-color: #000
+	@include before-absolute(auto, 1px, 9px, 12px)
+		bottom: 0
+		background-size: cover
+		background-image: url("../img/check.png")
+		opacity: 0
+		transition: 0.25s
+input[name=input-comparison]
+	display: none
+	&:checked + span::before
+		opacity: 1
+.btn-clear
+	display: inline-block
+	padding: 5px 0 0
+	@include font($size: 14px, $line-height: 22px, $letter-spacing: 0.03em, $color: #424242)
+	outline: none
+	background-color: transparent
+	box-shadow: none
+	border: 0
+	border-bottom: 2px dotted #424242
+	cursor: pointer
+	transition: 0.25s
+	&:hover
+		color: #000
+		border-bottom: 2px solid #424242
+.tabs-comparison
+	.tabs-nav
+		border-bottom: 0
+		li
+			margin: 0 30px 0 0
+			padding: 13px 0
+			box-sizing: border-box
+			font-size: 14px
+			line-height: 14px
+			font-weight: 700	
+			line-height: 0.03em
+			text-transform: uppercase
+			border-bottom: 3px solid transparent
+			&:hover,
+			&.active
+				color: #b71e3e	
+				border-color: #b71e3e
+.div-comparison
+	overflow-x: auto
+.table-comparison
+	width: 100%
+	border-collapse: collapse
+	@include font($size: 13px, $line-height: 22px, $letter-spacing: 0.03em, $font-weight: 400, $color: #303030)
+	th,
+	td
+		position: relative
+		padding: 15px 17px
+		width: 283px
+		min-width: 283px
+		max-width: 283px
+		box-sizing: border-box
+		border: 1px solid #ebebeb
+		transition: 0.5s
+	th:first-of-type
+		width: 239px
+		min-width: 239px
+		max-width: 239px
+	thead
+		background-color: #f7f7f7
+		th,
+		td
+			font-size: 16px
+			font-weight: 700
+			line-height: 20px
+			text-transform: uppercase
+		th:first-of-type
+			font-size: 13px
+			letter-spacing: 0.05em
+			line-height: 24px
+	tr:nth-of-type(even)
+		background-color: #f7f7f7
+			
+	td .btn-clear 
+		font-size: 13px
+.td-comparison
+	background-color: #cee1ee
+.btn-clear-item.btn-close
+	position: absolute
+	top: 10px
+	right: 10px
+	width: 30px
+	height: 30px
+	border: 0
+	padding: 0
+	box-sizing: border-box
+	background-color: transparent
+	outline: none
+	@include close
+	cursor: pointer
+	&::before,
+	&::after
+		transition: 0.5s
+		background-color: #999999
+	&:hover::before,
+	&:hover::after
+		background-color: #000
+	
 
 @import "media" // Всегда в конце

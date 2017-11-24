@@ -224,10 +224,42 @@ $( document ).ready(function() {
 	
 	/* basket */
 	if( $( ".amount-counter" )) {
-		console.log("amount")
-		$( ".amount-minus" ).click(function() {
-			console.log("minus")
-			$( this ).next( "input" ).value()  = +$( this ).next( "input" ).value() - 1
+		
+		$( ".amount-minus" ).click(function() {		
+			if( $( this ).next().find( "input" ).val() > 1 ) {
+				$( this ).next().find( "input" ).val(function(i, curVal) {
+					return +curVal - 1
+				})
+			}
+		})
+		
+		$( ".amount-plus" ).click(function() {
+			$( this ).prev().find( "input" ).val(function(i, curVal) {
+				return +curVal + 1
+			})
+		})
+		
+	}
+	
+	/* comparison */
+	if( $( ".input-comparison" )) {
+		$( ".input-comparison" ).change(function(event) {
+			if( !$( this ).is(":checked")) {
+				$( ".td-comparison").css("background", "transparent");
+			} else {
+				$( ".td-comparison").css("background", "#cee1ee");
+			}
 		})
 	}
+	
+	if( $( ".btn-clear-item" ) ) {
+		$( ".btn-clear-item" ).click(function() {
+			var removeGood = +$( this ).parent().index(),
+				removeGoodName = removeGood + 1;
+			$( this ).parent().parent().parent().parent().find( "thead tr th:nth-of-type(" + removeGoodName + ")").remove();
+			$( this ).parent().parent().parent().parent().find( "tbody tr td:nth-of-type(" + removeGood  + ")").remove();
+		})
+	}
+	
+	
 });
