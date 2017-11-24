@@ -1802,7 +1802,7 @@ h2.block-title::before {
           align-items: flex-start;
 }
 
-.news-preview a {
+.news-preview a:not(.btn) {
   width: 100%;
 }
 
