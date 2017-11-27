@@ -225,11 +225,18 @@ $( document ).ready(function() {
 	/* basket */
 	if( $( ".amount-counter" )) {
 		
-		$( ".amount-minus" ).click(function() {		
+		$( ".amount-minus" ).click(function() {
+			$( this ).next().find( "input" ).parent().parent().parent().parent().find( ".basket-good-cost" ).data("goodCost");
+			var goodCost = $( this ).next().find( "input" ).parent().parent().parent().parent().find( ".basket-good-cost" ).data("goodCost");
+			var goodCount;
+			var goodFullCost;
 			if( $( this ).next().find( "input" ).val() > 1 ) {
 				$( this ).next().find( "input" ).val(function(i, curVal) {
-					return +curVal - 1
+					goodCount = +curVal - 1;
+					return goodCount
 				})
+				goodFullCost = goodCost * goodCount;
+				console.log($( this ).next().find( "input" ).parent().parent().parent().parent().find( ".basket-good-cost-amount" ).data("goodAmountCost", goodFullCost));
 			}
 		})
 		
@@ -237,6 +244,7 @@ $( document ).ready(function() {
 			$( this ).prev().find( "input" ).val(function(i, curVal) {
 				return +curVal + 1
 			})
+			console.log($( this ).prev().find( "input" ).val())
 		})
 		
 	}
